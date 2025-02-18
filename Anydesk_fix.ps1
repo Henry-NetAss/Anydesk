@@ -1,4 +1,4 @@
-$path = "C:\Na\installation"
+$path = "C:\Na\Anydesk"
 If(!(test-path -PathType container $path))
 {
       New-Item -ItemType Directory -Path $path
@@ -18,12 +18,12 @@ Write-Host "AnyDesk is not installed or not found at $anyDeskPath."
 }
 Remove-Item -Path "$env:ProgramData\AnyDesk" -Recurse -Force
 Remove-Item -Path "$env:USERPROFILE\appdata\Roaming\AnyDesk" -Recurse -Force
-New-Item -ItemType Directory -Force -Path C:\NA\Installation
-$workdir = "c:\na\installation\"
+New-Item -ItemType Directory -Force -Path C:\NA\Anydesk
+$workdir = "c:\na\Anydesk\"
 $source = "https://download.anydesk.com/AnyDesk.exe"
 $destination = "$workdir\AnyDesk.exe"
 Invoke-WebRequest $source -OutFile $destination
-set-location "C:\NA\Installation"
+set-location "C:\NA\Anydesk"
 .\AnyDesk.exe --install "C:\Program Files (x86)\AnyDesk" --start-with-win --create-shortcuts --create-desktop-icon --silent
 Start-Sleep -Seconds 15
 $NewPassword = 'Supp0rt@NA123'
